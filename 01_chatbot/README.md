@@ -1,0 +1,1 @@
+First thing I built — a terminal chatbot that holds a conversation using the OpenRouter API. Nothing fancy, just getting comfortable with how messages get passed back and forth and how the model keeps context. This is where everything starts.
