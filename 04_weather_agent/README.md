@@ -1,0 +1,1 @@
+Extended the tool-calling pattern to a real external API — Open-Meteo, no API key needed. The agent takes a city name, figures out the coordinates, fetches the weather, and summarizes it. First time the agent was actually talking to the outside world.
