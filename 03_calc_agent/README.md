@@ -1,0 +1,1 @@
+First real agent. The model decides on its own when it needs to do math, calls a calculator tool, and then uses the result to finish its response. Introduced the two-call loop, tool definitions, and the dispatch dictionary pattern. This one clicked a lot of things into place.
