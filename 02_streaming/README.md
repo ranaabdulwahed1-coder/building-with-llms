@@ -1,0 +1,1 @@
+Same chatbot, but now the response streams in token by token instead of waiting for the whole thing. Small change in the code, but it makes it feel way more like a real product. Good lesson in how streaming works under the hood.
