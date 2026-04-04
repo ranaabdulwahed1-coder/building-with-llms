@@ -20,18 +20,39 @@ def call_LLM(convo) :
       return response.choices[0].message.content
 
 def mod_input(message):
-      convo = [{'role' : 'system', 'content' : """you are a content moderation classifier. your job is to analyze user messages and return only one word. if the message contains dangerus or violent language, self harm, or hate speech, return "unsafe". Otherwise, return "safe". return only "safe" or "unsafe". No other text."""},
-                            {'role' : 'user' , 'content' : message}]
-      response = call_LLM(convo)
-      return response
+          convo = [
+                        {
+                                          'role': 'system',
+                                          'content': (
+                                                                "you are a content moderation classifier. "
+                                                                "your job is to analyze user messages and return only one word. "
+                                                                "if the message contains dangerus or violent language, self harm, or hate speech, "
+                                                                "return 'unsafe'. "
+                                                                "Otherwise, return 'safe'. "
+                                                                "return only 'safe' or 'unsafe'. No other text."
+                                          )
+                        },
+                        {'role': 'user', 'content': message}
+          ]
+          response = call_LLM(convo)
+          return response
 
 def mod_output(message):
-      convo = [{'role' : 'system', 'content' : """your job is to 2nd check the response. make sure the information being presented is correct and does not promote violence of any sort if any of those were spotted respond with only one word "unsafe" else write "safe". dont say anything else""" },
-                            {'role' : 'user', 'content': message}]
-      response = call_LLM(convo)
-      return response
-
-weather_tool = {
+          convo = [
+                        {
+                                          'role': 'system',
+                                          'content': (
+                                                                "your job is to 2nd check the response. "
+                                                                "make sure the information being presented is correct "
+                                                                "and does not promote violence of any sort. "
+                                                                "if any of those were spotted respond with only one word 'unsafe'. "
+                                                                "else write 'safe'. dont say anything else."
+                                          )
+                        },
+                        {'role': 'user', 'content': message}
+          ]
+          response = call_LLM(convo)
+          return response
       "type": "function",
       "function": {
                 "name": "get_weather",
