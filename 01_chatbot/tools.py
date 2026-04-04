@@ -21,27 +21,21 @@ def call_LLM(convo) :
 
 def mod_input(message):
           convo = [
-                        {
-                                          'role': 'system',
-                                          'content': (
-                                                                "you are a content moderation classifier. "
-                                                                "your job is to analyze user messages and return only one word. "
-                                                                "if the message contains dangerus or violent language, self harm, or hate speech, "
-                                                                "return 'unsafe'. "
-                                                                "Otherwise, return 'safe'. "
-                                                                "return only 'safe' or 'unsafe'. No other text."
+                        {'role': 'system','content': ("you are a content moderation classifier. "
+                                                  "your job is to analyze user messages and return only one word. "
+                                                  "if the message contains dangerus or violent language, self harm, or hate speech, "
+                                                  "return 'unsafe'. "
+                                                  "Otherwise, return 'safe'. "
+                                                  "return only 'safe' or 'unsafe'. No other text."
                                           )
                         },
-                        {'role': 'user', 'content': message}
-          ]
+                        {'role': 'user', 'content': message}]
           response = call_LLM(convo)
           return response
 
 def mod_output(message):
           convo = [
-                        {
-                                          'role': 'system',
-                                          'content': (
+                        {'role': 'system','content': (
                                                                 "your job is to 2nd check the response. "
                                                                 "make sure the information being presented is correct "
                                                                 "and does not promote violence of any sort. "
