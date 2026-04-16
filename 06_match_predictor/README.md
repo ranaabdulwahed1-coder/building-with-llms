@@ -1,12 +1,11 @@
-# 06 - Match Predictor ⚽
+# 06 - Match Predictor 
 
-okay so this is basically a football match predictor that uses real data and AI to guess who's gonna win a match. i built it using LangChain and it pulls live stats from actual football APIs so it's not just making stuff up lol
+ this is basically a football match predictor that uses real data and an LLM to guess who's gonna win a match. i built it using LangChain and it pulls live stats from actual football APIs so it's not just making stuff up 
 
 ## what it does
 
-you type in two teams and the city where the match is happening, and the script goes out and grabs a bunch of real data like league standings, last 5 results, season stats, injuries, head-to-head history, and even the weather at the stadium. then it sends all of that to an AI model which gives you a full analysis and a predicted scoreline.
+you type in two teams and the city where the match is happening, and the script goes out and grabs a bunch of real data like league standings, last 5 results, season stats, injuries, head-to-head history, and even the weather at the stadium. then it sends all of that to an LLm which gives you a full analysis and a predicted scoreline.
 
-pretty cool right
 
 ## how to run it
 
